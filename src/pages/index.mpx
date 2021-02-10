@@ -1,0 +1,55 @@
+<template>
+  <view>
+    <button type="warn">button</button>
+
+    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="reportSubmit">
+      <view class="section">
+        <view class="section__title">input</view>
+        <input name="input" placeholder="please input here" />
+      </view>
+      <view class="btn-area">
+        <button form-type="submit">Submit</button>
+        <button form-type="reset">Reset</button>
+      </view>
+    </form>
+
+    <view>
+      <view>icon</view>
+      <icon type="success"></icon>
+    </view>
+
+    <view>
+      <image src="https://avatars.githubusercontent.com/u/25874685?s=80&v=4"></image>
+    </view>
+  </view>
+</template>
+
+<script>
+  import { createPage } from '@mpxjs/core'
+
+  createPage({
+    data: {
+      scrollTop: 123
+    },
+    onLoad () {},
+    methods: {
+      formSubmit (e) {
+        console.log('formSubmit: ', e)
+      },
+      formReset (e) {
+        console.log('formReset: ', e)
+      },
+      reportSubmit (e) {
+        console.log('reportSubmit: ', e)
+      }
+    }
+  })
+</script>
+
+<script type="application/json">
+  {
+    "usingComponents": {
+      "list": "../components/list"
+    }
+  }
+</script>
